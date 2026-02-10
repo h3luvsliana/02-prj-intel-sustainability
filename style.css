@@ -1,32 +1,65 @@
 body {
   font-family: 'Times New Roman', Times, serif, sans-serif;
   background-color: #abcad8;
+  max-width: 1500px;
+  margin: 0 auto;
+  font-size: larger;
+  display: flex;
+  justify-content: center;
+  padding: 2rem;
+}
+
+.page-wrapper {
+  width: 100%;
+  max-width: 1800px;  
+  margin: 2rem auto; 
+  background-color: #abcad8;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
 header {
-  background-color: #337549;
+  background-color: #055693;
   color: #fff;
-  padding: 3rem;
+  padding: 16px;
   text-align: center;
+}
+
+header p {
+  font-size: 1.2rem;
+  margin-top: 0.5rem;
+  color: white;
+  opacity: 1;
+}
+
+.Intel-logo {
+  width: 180px;
+  height: auto;
+  margin-bottom: 1rem;
 }
 
 .Timeline {
   display: flex;
   overflow-x: auto;
   padding: 2rem;
-  gap: 1rem;
-  background-color: #97af9f;
+  gap: 2rem;
+  background-color: #6299c4;
   color: #e3edf1;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
 }
 
 .Card {
-  background-color: #e3edf1;
-  color: #337549;
+  background-color: #d0e3eb;
+  color: #055693;
   border-radius: 8px;
   padding: 1rem;
-  width: 200px;
+  width: 300px;
+  min-height: 200px;
   flex-shrink: 0;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+  scroll-snap-align: center;
 }
 
 .Card p {
@@ -45,5 +78,66 @@ header {
 
 .Card h2, .Card h3 {
   text-align: center;
+
+}
+
+.card-img {
+  width: 100%;
+  height: 130px;
+  object-fit: cover;
+  border-radius: 6px;
+  margin-bottom: 0.5rem;
+  transition: opacity 0.3s ease;
+}
+
+p {
+  text-align: center;
+  margin-top: 1rem;
+  color: #055693;
+}
+
+@media (max-width: 1050px) {
+  .page-wrapper {
+    max-width: 85%;
+  }
+  .Timeline {
+    flex-direction: column;
+    align-items: center;
+    overflow-x: visible;
+  }  
+  .Card p {
+    opacity: 1;
+  }
+
+  p {
+    opacity: 0;
+  }
+
+}
+
+@media (max-width: 480px) {
+  body {
+    display: flex;
+    padding: 1rem;
+  }
+
+  .page-wrapper {
+    max-width: 100%;
+    margin: 0;
+    border-radius: 0;
+    padding: 1rem;
+  }
+
+  .Timeline {
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .Card {
+    width: 100%;       
+    min-height: auto;  
+    padding: 1rem;
+    border-radius: 12px;
+  }
 
 }
