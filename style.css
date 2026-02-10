@@ -1,5 +1,5 @@
 body {
-  font-family: 'Times New Roman', Times, serif, sans-serif;
+  font-family: monospace, Arial, Helvetica, sans-serif;
   background-color: #abcad8;
   max-width: 1500px;
   margin: 0 auto;
@@ -76,9 +76,12 @@ header p {
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
 }
 
-.Card h2, .Card h3 {
+.Card h2,
+.Card h3 {
   text-align: center;
-
+  transition: transform 0.3s ease, opacity 0.3s ease;
+  transform: scale(1.2); /* slightly bigger by default */
+  z-index: 2;
 }
 
 .card-img {
@@ -88,6 +91,12 @@ header p {
   border-radius: 6px;
   margin-bottom: 0.5rem;
   transition: opacity 0.3s ease;
+}
+
+.Card:hover h2,
+.Card:hover h3 {
+  transform: scale(1); /* back to normal */
+  opacity: 0.9; /* subtle fade to draw attention to paragraph */
 }
 
 p {
@@ -112,6 +121,15 @@ p {
   p {
     opacity: 0;
   }
+
+  .Card h2,
+  .Card h3 {
+    transform: scale(1);
+  }
+
+   .Card .card-img {
+    opacity: 1;
+  } 
 
 }
 
